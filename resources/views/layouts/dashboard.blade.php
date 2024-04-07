@@ -21,6 +21,7 @@
             @include('layouts.partials.top-header')
             <div class="flex-grow flex overflow-x-hidden">
                 @yield('content')
+                
             </div>
         </div>
     </div>

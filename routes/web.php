@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'pages.dashboard');
@@ -16,6 +17,13 @@ Route::group([
     ], function () {
         Route::get('/', 'StoreController@index')->name('index');
         Route::get('/{id}', 'StoreController@show')->name('show');
+    });
+    Route::group([
+        'as' => 'products.',
+        'prefix' => 'products'
+    ], function () {
+        Route::get('/', 'ProductController@index')->name('index');
+        Route::get('/{id}', 'ProductController@show')->name('show');
     });
 });
 

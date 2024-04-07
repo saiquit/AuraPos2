@@ -26,7 +26,7 @@ class Product extends Model
      */
     public function stores(): BelongsToMany
     {
-        return $this->belongsToMany(Store::class);
+        return $this->belongsToMany(Store::class)->withPivot(['stock', 'status', 'notes'])->withTimestamps();
     }
     public function unit()
     {

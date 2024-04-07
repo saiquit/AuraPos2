@@ -20,7 +20,7 @@ class Store extends Model
      */
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot(['stock', 'status', 'notes'])->withTimestamps();
     }
     /**
      * Get the users that owns the Store
